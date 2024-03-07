@@ -10,9 +10,9 @@ export default class Car {
   }
 
   set brand(value) {
-    if (typeof value !== 'string') {
-      throw TypeError('brand must be a string');
-    }
+    // if (typeof value !== 'string') {
+    //   throw TypeError('brand must be a string');
+    // }
     this._brand = value;
   }
 
@@ -21,9 +21,9 @@ export default class Car {
   }
 
   set motor(value) {
-    if (typeof value !== 'string') {
-      throw TypeError('motor must be a string');
-    }
+    // if (typeof value !== 'string') {
+    //   throw TypeError('motor must be a string');
+    // }
     this._motor = value;
   }
 
@@ -32,13 +32,13 @@ export default class Car {
   }
 
   set color(value) {
-    if (typeof value !== 'string') {
-      throw TypeError('color must be a string');
-    }
+    // if (typeof value !== 'string') {
+    //   throw TypeError('color must be a string');
+    // }
     this._color = value;
   }
 
   cloneCar() {
-    return Object.assign(Object.create(Object.getPrototypeOf(this)), this);
+    return Object.assign(Object.create(Object.getPrototypeOf(this)), new Car());
   }
 }
