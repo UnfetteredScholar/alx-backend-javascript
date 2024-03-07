@@ -38,7 +38,13 @@ export default class Car {
     this._color = value;
   }
 
+  static get [Symbol.species]() {
+    return this;
+  }
+
   cloneCar() {
-    return Object.assign(Object.create(Object.getPrototypeOf(this)), new Car());
+    const Species = this.constructor[Symbol.species];
+
+    return new Species();
   }
 }
