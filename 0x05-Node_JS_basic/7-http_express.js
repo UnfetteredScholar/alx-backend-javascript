@@ -1,8 +1,6 @@
 const express = require('express');
-const { argv } = require('process');
 const fs = require('fs');
 
-const DATABASE = argv[2];
 const app = express();
 const port = 1245;
 
@@ -41,7 +39,7 @@ app.get('/', (req, res) => {
 app.get('/students', async (req, res) => {
   const title = 'This is the list of our students';
   try {
-    const students = await countStudents(DATABASE);
+    const students = await countStudents(process.argv[2]);
     res.send(`${title}\n${students}`);
   } catch (error) {
     res.send(`${title}${error.message}`);
