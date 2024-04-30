@@ -5,7 +5,7 @@ class StudentsController {
     try {
       response.status = 200;
       const title = 'This is the list of our students';
-      const obj = await readDatabase('./database.csv');
+      const obj = await readDatabase(process.argv[2]);
       let content = '';
       for (const cls in obj) {
         if (cls) content += `\nNumber of students in ${cls}: ${obj[cls].length}. List: ${obj[cls].join(', ')}`;
@@ -23,7 +23,7 @@ class StudentsController {
       response.send(500, 'Major parameter must be CS or SWE');
     }
     try {
-      const obj = await readDatabase('database.csv');
+      const obj = await readDatabase(process.argv[2]);
       const content = `List: ${obj[major].join(', ')}`;
       response.status = 200;
       response.send(`${content}`);
