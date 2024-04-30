@@ -6,8 +6,8 @@ function countStudents(path) {
     data = data.slice(1, data.length - 1);
     console.log(`Number of students: ${data.length}`);
     const obj = {};
-    data.forEach((el) => {
-      const student = el.split(',');
+    data.forEach((element) => {
+      const student = element.split(',');
       if (!obj[student[3]]) obj[student[3]] = [];
       obj[student[3]].push(student[0]);
     });
