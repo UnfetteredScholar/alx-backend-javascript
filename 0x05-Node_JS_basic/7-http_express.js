@@ -39,8 +39,13 @@ app.get('/', (req, res) => {
 });
 
 app.get('/students', async (req, res) => {
-  const students = await countStudents(DATABASE);
-  res.send(students);
+  const title = 'This is the list of our students';
+  try {
+    const students = await countStudents(DATABASE);
+    res.send(`${title}\n${students}`);
+  } catch (error) {
+    res.send(`${title}${error.message}`);
+  }
 });
 
 app.listen(port);
