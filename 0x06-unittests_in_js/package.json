@@ -4,19 +4,20 @@
   "description": "ALX Backend JavaScript 0x06-unittests_in_js",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "./node_modules/mocha/bin/mocha --require babel-register --exit"
   },
   "author": "Ato Toffah <atotoffah@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
-    "chai": "^5.1.0",
+    "nodemon": "^2.0.2",
     "eslint": "^6.4.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jest": "^22.17.0",
-    "mocha": "^10.4.0",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2",
     "request": "^2.88.0",
     "sinon": "^7.5.0"
   }
