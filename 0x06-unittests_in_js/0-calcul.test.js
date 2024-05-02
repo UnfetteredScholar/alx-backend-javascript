@@ -1,9 +1,9 @@
 const assert = require('assert');
-const calculateNumber = require('./ 0-calcul');
+const calculateNumber = require('./0-calcul');
 
 describe('calculateNumber', () => {
   it('floating point whole numbers', () => {
-    assert.strictEqual(calculateNumber(4.0, 5.0), 9);
+    assert.strictEqual(calculateNumber(1.0, 2.0), 3);
   });
 
   it('rounding down b\'s floating point fractional number', () => {
